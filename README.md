@@ -26,13 +26,13 @@
 
 
 ### Questions?
-Please don't hesitate to contact us:
+Please don't hesitate to contact the development team:
 
-### Gavin Phill carpe.gavin@gmail.com
-### Devante Williams
-### Issac Loya
-### Logan Sage
-### Jared Ackley
+#### [Gavin Phill](https://github.com/carpegavin)
+#### [Devante Williams](https://github.com/Devante05)
+#### [Issac Loya](https://github.com/misterloya)
+#### [Logan Sage](https://github.com/sagelogan)
+#### [Jared Ackley](https://github.com/jrod3323)
 
 © copyright 2021 Full Stache Developers
 
