@@ -1,0 +1,26 @@
+{
+  "name": "follow-my-fitness",
+  "version": "1.0.0",
+  "description": "A fitness tracker",
+  "main": "server.js",
+  "dependencies": {
+    "handlebars": "^4.7.6",
+    "mysql2": "^2.2.5",
+    "package.json": "^2.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/carpegavin/Follow-My-Fitness.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/carpegavin/Follow-My-Fitness/issues"
+  },
+  "homepage": "https://github.com/carpegavin/Follow-My-Fitness#readme"
+}
