@@ -2,10 +2,8 @@
 
 ## `Description`
 
-* 
-* 
-* 
-* 
+* User StoryFollow My Fitness is an application designed to give a user the ability to track their workouts, set goals, and track current body stats.  The application will allow the user to track their current BMI statistics as well as daily work outs.  Workouts will bestored in a database so that they persist for a user. 
+
 
 ## `Technologies used`
 
