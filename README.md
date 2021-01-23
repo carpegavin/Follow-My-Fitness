@@ -7,7 +7,7 @@
 * 
 * 
 
-## Created with 
+## Created with -
 
 * MySQL, Node, Express, Handlebars and a homemade ORM
 
