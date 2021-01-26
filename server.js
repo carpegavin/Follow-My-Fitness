@@ -33,3 +33,14 @@ db.sequelize.sync({ force: true }).then(function() {
     console.log("App listening on PORT " + PORT);
   });
 });
+
+// BMI CALCULATOR
+// // weight is in pounds
+// // height will need to be converted to inches
+
+function calculator(weight, height) {
+  var results = weight / height / height * 703; 
+  console.log(results);
+}
+
+calculator(300,72);
