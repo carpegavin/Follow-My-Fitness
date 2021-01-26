@@ -39,7 +39,7 @@ module.exports = function(app) {
 
           // Goal api route
   app.get("/api/goals/", function(req, res) {
-    db.Post.findAll({})
+    db.Goal.findAll({})
       .then(function(goalDB) {
         res.json(goalDB);
       });
@@ -48,7 +48,7 @@ module.exports = function(app) {
 
   app.post("/api/goals", function(req, res) {
     console.log(req.body);
-    db.Post.create({
+    db.Goal.create({
       goalSetByUser: req.body.goalSetByUser
     })
       .then(function(goalDB) {
