@@ -9,6 +9,7 @@
     "handlebars": "^4.7.6",
     "mysql2": "^2.2.5",
     "package.json": "^2.0.1",
+    "prettier": "^2.2.1",
     "sequelize": "^6.4.0"
   },
   "devDependencies": {},
