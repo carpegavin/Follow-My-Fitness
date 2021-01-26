@@ -2,8 +2,28 @@ var db = require("../models");
 var passport = require("../config/passport");
 
 
+
 module.exports = function(app) {
-    app.post("/api/login", passport.authenticate("local"), function(req, res) {
+    // Goal api route
+  app.get("/api/goals/", function(req, res) {
+    db.Post.findAll({})
+      .then(function(goalDB) {
+        res.json(goalDB);
+      });
+  });
+    // Goal api route
+
+  app.post("/api/goals", function(req, res) {
+    console.log(req.body);
+    db.Post.create({
+      goalSetByUser: req.body.goalSetByUser
+    })
+      .then(function(goalDB) {
+        res.json(goalDB);
+      });
+  });
+
+   app.post("/api/login", passport.authenticate("local"), function(req, res) {
       res.json(req.user);
     });
 
