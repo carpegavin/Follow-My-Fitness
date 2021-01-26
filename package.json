@@ -7,11 +7,11 @@
     "express": "^4.17.1",
     "express-handlebars": "^5.2.0",
     "handlebars": "^4.7.6",
+    "materialize-css": "^1.0.0-rc.2",
     "mysql2": "^2.2.5",
     "package.json": "^2.0.1",
     "sequelize": "^6.4.0"
   },
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
