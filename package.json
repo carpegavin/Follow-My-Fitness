@@ -4,6 +4,7 @@
   "description": "A fitness tracker",
   "main": "server.js",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "express": "^4.17.1",
     "express-handlebars": "^5.2.0",
     "handlebars": "^4.7.6",
@@ -11,6 +12,8 @@
     "mysql": "^2.18.1",
     "mysql2": "^2.2.5",
     "package.json": "^2.0.1",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
     "prettier": "^2.2.1",
     "sequelize": "^6.4.0"
   },
