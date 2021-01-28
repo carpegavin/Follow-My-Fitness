@@ -1,33 +1,6 @@
-<div class="container">
-  <form class="login">
-    <div class="valign-wrapper">
-        <div class="row">
-          <div class="input-field col s6">
-            <input id="email" type="email" class="validate">
-            <label for="email">Email</label>
-          </div>
-        </div>
-
-        <!-- password -->
-        <div class="row">
-          <div class="input-field col s6">
-            <input id="password" type="password" class="validate">
-            <label for="password">Password</label>
-          </div>
-        </div>
-
-        <button class="btn waves-effect waves-light" type="submit" name="action">Submit
-          <i class="material-icons right"></i>
-        </button>
-      </div>
-  </form>
-</div>
- <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-
-<script>
-  $(document).ready(function() {
+$(document).ready(function() {
     // Getting references to our form and inputs
-    var loginForm = $("form");
+    var loginForm = $("form.login");
     var emailInput = $("input#email");
     var passwordInput = $("input#password");
   
@@ -64,4 +37,4 @@
         });
     }
   });
-</script>
+  
