@@ -37,24 +37,47 @@ module.exports = function(app) {
         }
       });
 
-          // Goal api route
-  app.get("/api/goals/", function(req, res) {
-    db.Goal.findAll({})
-      .then(function(goalDB) {
-        res.json(goalDB);
-      });
-  });
+      // Goal api route
+      app.get("/api/goals/", function(req, res) {
+      db.Goal.findAll({})
+        .then(function(goalDB) {
+          res.json(goalDB);
+        });
+    });
     // Goal api route
 
-  app.post("/api/goals", function(req, res) {
-    console.log(req.body);
-    db.Goal.create({
-      goalSetByUser: req.body.goalSetByUser
-    })
-      .then(function(goalDB) {
-        res.json(goalDB);
+      app.post("/api/goals", function(req, res) {
+        console.log(req.body);
+        db.Goal.create({
+          goalSetByUser: req.body.goalSetByUser
+        })
+          .then(function(goalDB) {
+            res.json(goalDB);
+          });
       });
-  });
-    
+        // Goal api route
+
+      app.put("/api/goals/:id", function (req, res) {
+        var condition = "id = " + req.params.id;
+      
+        console.log("condition", condition);
+      
+        Goal.update(
+          {
+            completed: req.body.completed,
+          },
+          condition,
+          function (result) {
+            if (req.body.completed === true) {
+              console.log("Goal marked as complete");
+            }
+            if (result.changedRows == 0) {
+              return res.status(404).end();
+            } else {
+              res.status(200).end();
+            }
+        });
+      });
+  
 };
     
