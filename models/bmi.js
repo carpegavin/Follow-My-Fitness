@@ -17,11 +17,11 @@ module.exports = function(sequelize, DataTypes) {
               allowNull: false
           },
           // createdAt TIMESTAMP NOT NULL DEFAULT current_timestamp,
-          createdAt: {
-            type: DataTypes.DATE,
-            allowNull: false,
-            defaultValue: DataTypes.NOW
-          }
+          // createdAt: {
+          //   type: DataTypes.DATE,
+          //   allowNull: false,
+          //   defaultValue: DataTypes.NOW
+          // }
     });
     return BMI;
   };

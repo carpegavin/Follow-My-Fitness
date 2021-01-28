@@ -38,7 +38,17 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false,
       defaultValue: DataTypes.NOW
     }
+    
   });
+  
+
+  // Creates association between Goals and Users table
+    User.associate = function(models) {
+      User.hasMany(models.Goals, {
+        onDelete: "cascade"
+      });
+    };
+
   // Creating a custom method for our User model. This will check if an unhashed password entered by the user can be compared to the hashed password stored in our database
   User.prototype.validPassword = function(password) {
     return bcrypt.compareSync(password, this.password);
