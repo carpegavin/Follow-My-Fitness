@@ -34,5 +34,9 @@ module.exports = function(app) {
     res.render("workout");
   });
 
+  app.get("/profile", isAuthenticated, function(req, res) {
+    res.render("profile");
+  });
+
 };
 
