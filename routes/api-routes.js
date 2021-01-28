@@ -39,7 +39,7 @@ module.exports = function(app) {
 
       // Goal api route
       app.get("/api/goals/", function(req, res) {
-      db.Goal.findAll({})
+      db.Goals.findAll({})
         .then(function(goalDB) {
           res.json(goalDB);
         });
@@ -48,7 +48,7 @@ module.exports = function(app) {
 
       app.post("/api/goals", function(req, res) {
         console.log(req.body);
-        db.Goal.create({
+        db.Goals.create({
           goalSetByUser: req.body.goalSetByUser
         })
           .then(function(goalDB) {
@@ -62,7 +62,7 @@ module.exports = function(app) {
       
         console.log("condition", condition);
       
-        Goal.update(
+        Goals.update(
           {
             completed: req.body.completed,
           },
