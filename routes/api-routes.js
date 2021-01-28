@@ -4,29 +4,10 @@ var passport = require("../config/passport");
 
 
 module.exports = function(app) {
-    // Goal api route
-  app.get("/api/goals/", function(req, res) {
-    db.Post.findAll({})
-      .then(function(goalDB) {
-        res.json(goalDB);
-      });
+
+  app.post("/api/login", passport.authenticate("local"), function(req, res) {
+    res.json(req.user);
   });
-    // Goal api route
-
-  app.post("/api/goals", function(req, res) {
-    console.log(req.body);
-    db.Post.create({
-      goalSetByUser: req.body.goalSetByUser
-    })
-      .then(function(goalDB) {
-        res.json(goalDB);
-      });
-  });
-
-   app.post("/api/login", passport.authenticate("local"), function(req, res) {
-      res.json(req.user);
-    });
-
     app.post("/api/signup", function(req, res) {
         db.User.create({
           email: req.body.email,
@@ -55,5 +36,25 @@ module.exports = function(app) {
           });
         }
       });
-    };
+
+          // Goal api route
+  app.get("/api/goals/", function(req, res) {
+    db.Goal.findAll({})
+      .then(function(goalDB) {
+        res.json(goalDB);
+      });
+  });
+    // Goal api route
+
+  app.post("/api/goals", function(req, res) {
+    console.log(req.body);
+    db.Goal.create({
+      goalSetByUser: req.body.goalSetByUser
+    })
+      .then(function(goalDB) {
+        res.json(goalDB);
+      });
+  });
+    
+};
     
