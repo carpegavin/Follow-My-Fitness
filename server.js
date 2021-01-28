@@ -1,4 +1,8 @@
-
+require('dotenv').config();
+// *****************************************************************************
+// Server.js - This file is the initial starting point for the Node/Express server.
+//
+// ******************************************************************************
 // *** Dependencies
 // =============================================================
 var express = require("express");
@@ -7,6 +11,10 @@ var express = require("express");
 // =============================================================
 var app = express();
 var PORT = process.env.PORT || 8080;
+
+// Set Handlebars as the default templating engine.
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
 
 // Requiring our models for syncing
 var db = require("./models");
