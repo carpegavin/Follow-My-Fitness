@@ -18,7 +18,7 @@ module.exports = function(app) {
       })
         .then(function() {
           console.log("it worked")
-          res.render("login")
+          res.redirect("/login");
         })
         .catch(function(err) {
           console.log("it didn't")
