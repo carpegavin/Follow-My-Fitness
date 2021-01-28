@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-    let Goal = sequelize.define("Goal", {
+    let Goals = sequelize.define("Goal", {
       goalSetByUser: {
         type: DataTypes.STRING,
         allowNull: false,
@@ -13,6 +13,6 @@ module.exports = function(sequelize, DataTypes) {
       },
   
     });
-    return Goal;
+    return Goals;
   };
   
