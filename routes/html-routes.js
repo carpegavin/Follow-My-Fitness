@@ -31,7 +31,7 @@ module.exports = function(app) {
   });
 
   app.get("/workout", isAuthenticated, function(req, res) {
-    res.render("workourInput");
+    res.render("workout");
   });
 
 };
