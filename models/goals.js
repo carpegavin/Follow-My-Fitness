@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-    let Goals = sequelize.define("Goal", {
+    let Goals = sequelize.define("Goals", {
       goalSetByUser: {
         type: DataTypes.STRING,
         allowNull: false,
