@@ -1,95 +1,54 @@
-<h1>Day Planner</h1>
+   <!-- Compiled and minified CSS -->
+   <head>
 
-<ul>
-  {{#each plans}}
-  <li>
-    <p>
-      {{this.id}}. {{this.plan}}
+           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+           <link rel="stylesheet" href="./public/assets/fitness.css">
+   </head>
+ 
+ 
+ 
+{{!-- NAV BAR WITH LINKS TO DIFFERENT PAGES --}}
+{{!-- IF SOMETHING IS CLICKED ONLY AVAILABLE TO MEMBERS, LINKS ARE TAKEN TO LOGIN PAGE --}}
+    <nav>
+        <div class="nav-wrapper">
+        <a href="#" class="brand-logo">Logo</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="sass.html">Sass</a></li>
+            <li><a href="badges.html">Components</a></li>
+            <li><a href="collapsible.html">JavaScript</a></li>
+        </ul>
+        </div>
+    </nav>
 
-      <button data-planid="{{this.id}}" class="delplan">Delete Plan!</button>
-    </p>
-  </li>
-  {{/each}}
-</ul>
 
-<h2>Create a Plan</h2>
-<form id="createplan" class="button-size">
-  <textarea type="text" name="plan"></textarea>
-  <button type="submit">Save Plan!</button>
-</form>
+    {{{ body }}}
 
-<h2>Update a Plan</h2>
-<form id="updateplan" class="button-size">
-  <select name="id">
-		{{#each plans}}
-			<option value="{{this.id}}">{{this.plan}}</option>
-		{{/each}}
-	</select>
-  <textarea type="text" name="plan" placeholder="plan"></textarea>
-  <button type="submit">Update Plan!</button>
-</form>
 
-<script type="text/javascript">
-  $(".delplan").on("click", function(event) {
-    // Get the ID from the button.
-    // This is shorthand for $(this).attr("data-planid")
-    var id = $(this).data("planid");
+    <footer class="page-footer">
+    <div class="container">
+        <div class="row">
+        <div class="col l6 s12">
+            <h5 class="white-text">Footer Content</h5>
+            <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+        </div>
+        <div class="col l4 offset-l2 s12">
+            <h5 class="white-text">Links</h5>
+            <ul>
+            <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+            </ul>
+        </div>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="container">
+        © 2014 Copyright Text
+        <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+        </div>
+    </div>
+    </footer>
 
-    // Send the DELETE request.
-    $.ajax("/api/plans/" + id, {
-      type: "DELETE"
-    }).then(
-      function() {
-        console.log("deleted id ", id);
-        // Reload the page to get the updated list
-        location.reload();
-      }
-    );
-  });
 
-  $("#createplan").on("submit", function(event) {
-    // Make sure to preventDefault on a submit event.
-    event.preventDefault();
 
-    // [name=plan] will find an element with a "name" attribute equal to the string "plan"
-    var newPlan = {
-      plan: $("#createplan [name=plan]").val().trim()
-    };
-
-    // Send the POST request.
-    $.ajax("/api/plans", {
-      type: "POST",
-      data: newPlan
-    }).then(
-      function() {
-        console.log("created new plan");
-        // Reload the page to get the updated list
-        location.reload();
-      }
-    );
-  });
-
-  $("#updateplan").on("submit", function(event) {
-    // Make sure to preventDefault on a submit event.
-    event.preventDefault();
-
-    // Get the ID by finding an element with a "name" attribute equal to the string "id"
-    var id = $("[name=id]").val().trim();
-
-    var updatedPlan = {
-      plan: $("#updateplan [name=plan]").val().trim()
-    };
-
-    // Send the PUT request.
-    $.ajax("/api/plans/" + id, {
-      type: "PUT",
-      data: updatedPlan
-    }).then(
-      function() {
-        console.log("updated id ", id);
-        // Reload the page to get the updated list
-        location.reload();
-      }
-    );
-  });
-</script>
