@@ -39,7 +39,12 @@ module.exports = function(sequelize, DataTypes) {
         time_workout: {
             type: DataTypes.INTEGER,
             allowNull:true
-        }
+        },
+        createdAt: {
+            type: DataTypes.DATE,
+            allowNull: false,
+            defaultValue: DataTypes.NOW
+          }
     });
     return Workout;
   };

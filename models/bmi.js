@@ -15,6 +15,12 @@ module.exports = function(sequelize, DataTypes) {
           date: {
               type: DataTypes.DATEONLY ,
               allowNull: false
+          },
+          // createdAt TIMESTAMP NOT NULL DEFAULT current_timestamp,
+          createdAt: {
+            type: DataTypes.DATE,
+            allowNull: false,
+            defaultValue: DataTypes.NOW
           }
     });
     return BMI;

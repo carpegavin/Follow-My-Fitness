@@ -8,15 +8,30 @@ module.exports = function(app) {
     res.render("index");
   });
 
-  app.get("/login", function(req, res) {
+  app.get("/signup", function(req, res) {
     if (req.user) {
-      res.redirect("/members");
+      res.render("index");
     }
-    res.sendFile(path.join(__dirname, "../public/login.html"));
+    res.render("signup");
   });
 
-  app.get("/members", isAuthenticated, function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/members.html"));
+  app.get("/login", function(req, res) {
+    if (req.user) {
+      res.render("index");
+    }
+    res.render("login");
+  });
+
+  app.get("/BMI", isAuthenticated, function(req, res) {
+    res.render("BMI");
+  });
+
+  app.get("/goals", isAuthenticated, function(req, res) {
+    res.render("goalsTrack");
+  });
+
+  app.get("/workout", isAuthenticated, function(req, res) {
+    res.render("workourInput");
   });
 
 };
