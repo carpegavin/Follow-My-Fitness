@@ -29,18 +29,30 @@ module.exports = function(app) {
     res.render("BMI");
   });
 
+
+
+ 
+
   app.get("/goals", isAuthenticated, function (req, res) {
     let userID = ""
+    
     if (req.user) {
       userID = req.user.id
     }
-    console.log("THIS IS USERID " + userID)
     db.User.findAll({where: {id:userID}}).then(user => {
-     console.log(user[0].dataValues.email)
      
       db.Goal.findAll({where: {email: user[0].dataValues.email}}).then(hbsObject => {
-        console.log("hbsObject")
-        res.render("goalsTrack", hbsObject);
+        
+        console.log("THIS IS HBS ")
+        // console.log(hbsObject)
+        let goalArr = hbsObject.map(goal => {
+         return goal.dataValues
+        })
+        console.log(goalArr)
+        const goalObj = { 
+          goals: goalArr
+        }
+        res.render("goalsTrack", goalObj);
   
       })
 
