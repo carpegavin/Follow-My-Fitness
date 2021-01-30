@@ -60,3 +60,10 @@ body{
     label{
         font-size: large;
     }
+
+    #bmiTop{
+        background-color: black;
+        background-image: url("/assets/images/fitnessGirl.jpg");
+        background-size: cover;
+        height: 650px;
+    }
