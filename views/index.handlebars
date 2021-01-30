@@ -10,7 +10,7 @@
             <div class="col s5 push-s6">
                 <h1>MANAGE GOALS</h1>
                 <p>Set your goals in our app, then login daily so that we know you're hitting your goals.</p>
-                <button>GET STARTED</button>
+                <button onclick="location.href='/goals">GET STARTED</button>
             </div>
         </div>
 
@@ -22,7 +22,8 @@
                                 <span class="card-title">Weight Lifting</span>
                             </div>
                             <div class="card-image">
-                              <img src="../assets/images/squatGirl.jpg">
+                              {{!-- need to route this to proper handlebars page --}}
+                              <a href="/workout" class="chooseWorkout" title="weightLifting"><img src="../assets/images/squatGirl.jpg" /></a>
                             </div>
                           </div>
                         </div>
@@ -35,7 +36,7 @@
                                 <span class="card-title">Cardio</span>
                             </div>
                             <div class="card-image">
-                              <img src="../assets/images/runningGuy.jpg">
+                             <a href="/workout" class="chooseWorkout" title="Cardio"><img src="../assets/images/runningGuy.jpg" /></a>
                             </div>
                           </div>
                         </div>
@@ -48,7 +49,7 @@
                                 <span class="card-title">Body Weight Exercise</span>
                             </div>
                             <div class="card-image">
-                              <img src="../assets/images/crunchGirl.jpg">
+                               <a href="/workout" class="chooseWorkout" title="bodyWeightExercise"><img src="../assets/images/crunchGirl.jpg" /></a>
                             </div>
                           </div>
                         </div>
