@@ -23,9 +23,9 @@
       <h2>Goals not yet reached</h2>
 
       <ul>
-        {{#each Goal}}
+        {{#each goals}}
         {{#unless completed}}
-        {{> layout /goal-block}}
+        {{> goal /goal-block}}
         {{/unless}}
         {{/each}}
       </ul>
@@ -35,9 +35,9 @@
       <h2>Goals Completed</h2>
 
       <ul>
-        {{#each Goal}}
+        {{#each goals}}
         {{#if completed}}
-        {{> layout /goal-block}}
+        {{> goal /goal-block}}
         {{/if}}
         {{/each}}
       </ul>
