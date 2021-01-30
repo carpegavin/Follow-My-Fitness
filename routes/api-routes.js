@@ -17,8 +17,8 @@ module.exports = function(app) {
       db.User.create({
         email: req.body.email,
         password: req.body.password,
-        height: req.body.height,
-        weight: req.body.weight,
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
       })
         .then(function() {
           console.log("it worked")
