@@ -2,7 +2,10 @@ var db = require("../models");
 var passport = require("../config/passport");
 const isAuthenticated = require("../config/middleware/isAuthenticated");
 
-
+// console.log(db);
+// console.log("***************************");
+// console.log(db.BMI);
+// console.log("***************************");
 
 module.exports = function(app) {
 
@@ -96,8 +99,9 @@ module.exports = function(app) {
     });
 
   // BMI api route
-  app.get("/api/BMI/", function(req, res) {
-    db.BMI.findAll({
+  app.get("/api/BMI", function(req, res) {
+  
+    db.Bmi.findAll({
       where: {
         email: req.user.email
       }
@@ -110,14 +114,14 @@ module.exports = function(app) {
   
   app.post("/api/BMI", function(req, res) {
     
-    db.BMI.create({
+    db.Bmi.create({
       height: req.body.height,
       weight:req.body.weight,
-      BMI: req.body.BMI,
+      bmi: req.body.bmi,
       email: req.user.email
     })
-      .then(function(goalDB) {
-        res.json(goalDB);
+      .then(function(BMIDB) {
+        res.json(BMIDB);
       });
   });
 

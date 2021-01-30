@@ -8,19 +8,19 @@
                         <div>
 
                             <div class="input-field col s4">
-                                <input id="weight" type="number" class="validate">
+                                <input id="weight" type="weight" class="validate">
                                 <label for="weight">Weight (Pounds):</label>
                             </div>
 
                             <div class="row">
         
                                 <div class="input-field col s4">
-                                    <input id="feet" type="number" class="validate">
+                                    <input id="feet" type="feet" class="validate">
                                     <label for="feet">Height (Feet):</label>
                                 </div>
 
                                 <div class="input-field col s4">
-                                    <input id="inches" type="number" class="validate">
+                                    <input id="inches" type="inches" class="validate">
                                     <label for="inches">Height (Inches):</label>
                                 </div>
 
@@ -51,47 +51,49 @@
 <script >
     $(document).ready(function() {
       var BMIForm = $("form");
+      var feetInput = $("input#feet");
+      var inchesInput = $("input#inches");
+      var weightInput = $("input#weight");
         // get request for goals on load
-        //$.get("/api/BMI"),function(data){
-        //return data
-        //}
+        $.get("/api/BMI"),function(data){
+        return data
+        }
         // Getting references to our form and inputs
 
         // When the form is submitted, we validate there's an email and password entered
         BMIForm.on("submit", function(event) {
         event.preventDefault();
 
-        var feetInput = parseInt(("input#feet"));
-        var inchesInput = parseInt(("input#inches"));
-        var weightInput = parseInt(("input#weight"));
+        let feet = parseInt(feetInput.val().trim());
+        let inches = parseInt(inchesInput.val().trim());
+        let weight = parseInt(weightInput.val().trim());
 
-        var heightM = ((((feetInput*12)+inchesInput)*2.54)/100);
-        var weightKG = (weightInput/2.20462);
-        var BMI= weightKG/(heightM*heightM);
+        var heightM = ((((feet*12)+inches)*2.54)/100);
+        var weightKG = (weight/2.20462);
+        var bmi= (weightKG/(heightM*heightM)).toFixed(2);
 
         var userData = {
-            height: feetInput*12+inchesInput,
-            weight: weightInput,
-            BMI: BMI,
+            height: feet*12+inches,
+            weight: weight,
+            bmi: bmi,
         };
-
-        if (!userData.height || !userData.weight || !userData.BMI) {
+        console.log(userData)
+        if (!userData.height || !userData.weight || !userData.bmi) {
             return;
         }
 
         // If we have an email and password we run the loginUser function and clear the form
-        addBMI(userData.height,userData.weight,userData.BMI);
+        addBMI(userData.height,userData.weight,userData.bmi);
         feetInput.val("");
         inchesInput.val("");
         weightInput.val("");
-        });
 
         // loginUser does a post to our "api/login" route and if successful, redirects us the the members page
-        function addBMI(height,weight,BMI) {
+        function addBMI(height,weight,bmi) {
         $.post("/api/BMI", {
             height: height,
             weight:weight,
-            BMI:BMI
+            bmi:bmi
         })
             .then(function() {
             window.location.replace("/BMI");
@@ -101,5 +103,6 @@
             console.log(err);
             });
         }
+      });
     });
 </script>

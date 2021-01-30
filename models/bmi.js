@@ -8,8 +8,8 @@ module.exports = function(sequelize, DataTypes) {
               isEmail: true
             }
           },
-        BMI: {
-            type: DataTypes.DECIMAL(3,2),
+        bmi: {
+            type: DataTypes.DECIMAL,
             allowNull:false,
         },
         height: {
