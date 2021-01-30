@@ -46,5 +46,13 @@ module.exports = function(sequelize, DataTypes) {
         //     defaultValue: DataTypes.NOW
         //   }
     });
+
+    Workout.associate = function(models) {
+        Workout.belongsTo(models.User, {
+          foreignKey: {
+            allowNull: false
+          }
+        });
+      };
     return Workout;
   };

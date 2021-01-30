@@ -23,5 +23,14 @@ module.exports = function(sequelize, DataTypes) {
           //   defaultValue: DataTypes.NOW
           // }
     });
+
+    BMI.associate = function(models) {
+      BMI.belongsTo(models.User, {
+        foreignKey: {
+          allowNull: false
+        }
+      });
+    };
+
     return BMI;
   };
