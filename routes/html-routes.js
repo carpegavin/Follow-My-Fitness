@@ -57,5 +57,20 @@ module.exports = function(app) {
     res.render("profile");
   });
 
+  app.get("/workoutBodyweight", isAuthenticated, function(req, res) {
+    res.render("workoutBodyweight");
+  });
+
+  app.get("/workoutCardio", isAuthenticated, function(req, res) {
+    res.render("workoutCardio");
+  });
+
+
+  app.get("/workoutWeightlifting", isAuthenticated, function(req, res) {
+    res.render("workoutWeightlifting");
+  });
+
+
+
 };
 
