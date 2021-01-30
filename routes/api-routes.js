@@ -46,6 +46,7 @@ module.exports = function(app) {
     app.get("/api/goals/", function(req, res) {
     db.Goals.findAll({})
       .then(function(goalDB) {
+        console.log(goalDB)
         res.json(goalDB);
       });
   });
