@@ -18,7 +18,7 @@
 
 
 body{
-    background-color:black;
+    background-color:white;
 }
 #firstThird{
     background-color: black;
@@ -61,9 +61,31 @@ body{
         font-size: large;
     }
 
+<<<<<<< HEAD
     #bmiTop{
         background-color: black;
         background-image: url("/assets/images/fitnessGirl.jpg");
         background-size: cover;
         height: 650px;
+    }
+
+    #signUp{
+        background-color: black;
+        background-image: url("/assets/images/fitnessGirl.jpg");
+        background-size: cover;
+        height: 650px;
+=======
+    #navlogo{
+        width:50px;
+    }
+    
+    #footlogo{
+        display: inline-block;
+        width: 250px;
+        justify-content: center;
+    }
+
+    input {
+        background-color:white;
+>>>>>>> 19a57bf05c8ad2bb09ba842c932d43c70bab894a
     }
