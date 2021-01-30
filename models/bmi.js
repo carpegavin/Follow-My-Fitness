@@ -8,20 +8,23 @@ module.exports = function(sequelize, DataTypes) {
               isEmail: true
             }
           },
-          BMI: {
-              type: DataTypes.DECIMAL(3,2),
-              allowNull:false,
-          },
-          date: {
-              type: DataTypes.DATEONLY ,
-              allowNull: false
-          },
-          // createdAt TIMESTAMP NOT NULL DEFAULT current_timestamp,
-          // createdAt: {
-          //   type: DataTypes.DATE,
-          //   allowNull: false,
-          //   defaultValue: DataTypes.NOW
-          // }
+        BMI: {
+            type: DataTypes.DECIMAL(3,2),
+            allowNull:false,
+        },
+        height: {
+          type: DataTypes.INTEGER,
+          allowNull: false
+        },
+        weight: {
+          type: DataTypes.INTEGER,
+          allowNull: false
+        },
+        createdAt: {
+          type: DataTypes.DATE,
+          allowNull: false,
+          defaultValue: DataTypes.NOW
+        }
     });
     return BMI;
   };

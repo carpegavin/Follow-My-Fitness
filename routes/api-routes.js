@@ -1,5 +1,6 @@
 var db = require("../models");
 var passport = require("../config/passport");
+const isAuthenticated = require("../config/middleware/isAuthenticated");
 
 
 
@@ -42,9 +43,11 @@ module.exports = function(app) {
       }
     });
 
+
+
     // Goal api route
     app.get("/api/goals/", function(req, res) {
-    db.Goals.findAll({
+    db.Goal.findAll({
       where: {
         email: req.user.email
       }
@@ -58,7 +61,9 @@ module.exports = function(app) {
 
     app.post("/api/goals", function(req, res) {
       console.log(req.body);
-      db.Goals.create({
+      console.log(req.user.email);
+      
+      db.Goal.create({
         goalSetByUser: req.body.goal,
         email: req.user.email
       })
@@ -73,7 +78,7 @@ module.exports = function(app) {
     
       console.log("condition", condition);
     
-      Goals.update(
+      Goal.update(
         {
           completed: req.body.completed,
         },
@@ -89,6 +94,32 @@ module.exports = function(app) {
           }
       });
     });
+
+  // BMI api route
+  app.get("/api/BMI/", function(req, res) {
+    db.BMI.findAll({
+      where: {
+        email: req.user.email
+      }
+    })
+      .then(function(BMIDB) {
+        console.log(BMIDB)
+        res.json(BMIDB);
+      });
+    });
   
+  app.post("/api/BMI", function(req, res) {
+    
+    db.BMI.create({
+      height: req.body.height,
+      weight:req.body.weight,
+      BMI: req.body.BMI,
+      email: req.user.email
+    })
+      .then(function(goalDB) {
+        res.json(goalDB);
+      });
+  });
+
 };
     
