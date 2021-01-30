@@ -45,17 +45,17 @@ module.exports = function(app) {
 
 
 
-    // Goal api route
-    app.get("/api/goals/", function(req, res) {
-    db.Goals.findAll({
-      where: {
-        email: req.user.email
-      }
-    })
-      .then(function(goalDB) {
-        console.log(goalDB)
-        res.json(goalDB);
-      });
+  // Goal api route
+  app.get("/api/goals/", function(req, res) {
+  db.Goals.findAll({
+    where: {
+      email: req.user.email
+    }
+  })
+    .then(function(goalDB) {
+      console.log(goalDB)
+      res.json(goalDB);
+    });
   });
   // Goal api route
 
@@ -92,6 +92,32 @@ module.exports = function(app) {
           }
       });
     });
+
+  // BMI api route
+  app.get("/api/BMI/", function(req, res) {
+    db.BMI.findAll({
+      where: {
+        email: req.user.email
+      }
+    })
+      .then(function(BMIDB) {
+        console.log(BMIDB)
+        res.json(BMIDB);
+      });
+    });
   
+  app.post("/api/BMI", function(req, res) {
+    
+    db.BMI.create({
+      height: req.body.height,
+      weight:req.body.weight,
+      BMI: req.body.BMI,
+      email: req.user.email
+    })
+      .then(function(goalDB) {
+        res.json(goalDB);
+      });
+  });
+
 };
     
