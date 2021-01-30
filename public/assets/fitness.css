@@ -41,7 +41,7 @@ body{
         background-color: black;
         background-image: url("/assets/images/curlingGuy.jpg");
         background-size: cover;
-        height: 650px; 
+    
     }
     .card{
     border: 6px solid yellow;
