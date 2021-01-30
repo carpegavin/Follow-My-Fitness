@@ -47,7 +47,7 @@ module.exports = function(app) {
 
     // Goal api route
     app.get("/api/goals/", function(req, res) {
-    db.Goals.findAll({
+    db.Goal.findAll({
       where: {
         email: req.user.email
       }
@@ -61,7 +61,9 @@ module.exports = function(app) {
 
     app.post("/api/goals", function(req, res) {
       console.log(req.body);
-      db.Goals.create({
+      console.log(req.user.email);
+      
+      db.Goal.create({
         goalSetByUser: req.body.goal,
         email: req.user.email
       })
@@ -76,7 +78,7 @@ module.exports = function(app) {
     
       console.log("condition", condition);
     
-      Goals.update(
+      Goal.update(
         {
           completed: req.body.completed,
         },

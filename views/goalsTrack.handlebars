@@ -23,7 +23,7 @@
       <h2>Goals not yet reached</h2>
 
       <ul>
-        {{#each Goals}}
+        {{#each Goal}}
         {{#unless completed}}
         {{> layout /goal-block}}
         {{/unless}}
@@ -35,7 +35,7 @@
       <h2>Goals Completed</h2>
 
       <ul>
-        {{#each Goals}}
+        {{#each Goal}}
         {{#if completed}}
         {{> layout /goal-block}}
         {{/if}}
