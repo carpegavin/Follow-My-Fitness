@@ -20,13 +20,13 @@ module.exports = function(sequelize, DataTypes) {
     });
 
     // sets Goals as FK to User table
-    Goals.associate = function(models) {
-      Goals.belongsTo(models.User, {
-        foreignKey: {
-          allowNull: false
-        }
-      });
-    };
+    // Goals.associate = function(models) {
+    //   Goals.belongsTo(models.User, {
+    //     foreignKey: {
+    //       allowNull: false
+    //     }
+    //   });
+    // };
     return Goals;
   };
   

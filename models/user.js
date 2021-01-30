@@ -43,21 +43,21 @@ module.exports = function(sequelize, DataTypes) {
   
 
   // Creates association between Goals and Users table
-    User.associate = function(models) {
-      User.hasMany(models.Goals, {
-        onDelete: "cascade"
-      });
-    };
-    User.associate = function(models) {
-      User.hasMany(models.Workout, {
-        onDelete: "cascade"
-      });
-    };
-    User.associate = function(models) {
-      User.hasMany(models.BMI, {
-        onDelete: "cascade"
-      });
-    };
+    // User.associate = function(models) {
+    //   User.hasMany(models.Goals, {
+    //     onDelete: "cascade"
+    //   });
+    // };
+    // User.associate = function(models) {
+    //   User.hasMany(models.Workout, {
+    //     onDelete: "cascade"
+    //   });
+    // };
+    // User.associate = function(models) {
+    //   User.hasMany(models.BMI, {
+    //     onDelete: "cascade"
+    //   });
+    // };
 
   // Creating a custom method for our User model. This will check if an unhashed password entered by the user can be compared to the hashed password stored in our database
   User.prototype.validPassword = function(password) {

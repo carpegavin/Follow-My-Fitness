@@ -47,12 +47,12 @@ module.exports = function(sequelize, DataTypes) {
         //   }
     });
 
-    Workout.associate = function(models) {
-        Workout.belongsTo(models.User, {
-          foreignKey: {
-            allowNull: false
-          }
-        });
-      };
+    // Workout.associate = function(models) {
+    //     Workout.belongsTo(models.User, {
+    //       foreignKey: {
+    //         allowNull: false
+    //       }
+    //     });
+    //   };
     return Workout;
   };

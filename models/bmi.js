@@ -24,13 +24,13 @@ module.exports = function(sequelize, DataTypes) {
           // }
     });
 
-    BMI.associate = function(models) {
-      BMI.belongsTo(models.User, {
-        foreignKey: {
-          allowNull: false
-        }
-      });
-    };
+    // BMI.associate = function(models) {
+    //   BMI.belongsTo(models.User, {
+    //     foreignKey: {
+    //       allowNull: false
+    //     }
+    //   });
+    // };
 
     return BMI;
   };
