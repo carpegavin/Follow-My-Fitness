@@ -42,19 +42,10 @@ module.exports = function(app) {
         });
       }
     });
-<<<<<<< HEAD
 /////Goals
     // Goal api route
     app.get("/api/goals/", function(req, res) {
     db.Goals.findAll({
-=======
-
-
-
-    // Goal api route
-    app.get("/api/goals/", function(req, res) {
-    db.Goal.findAll({
->>>>>>> e6b080fe5493e1837b428437769420d9d3d815e5
       where: {
         email: req.user.email
       }
