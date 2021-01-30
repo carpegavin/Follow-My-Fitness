@@ -33,6 +33,7 @@ body{
     font-family: 'Londrina Solid', cursive;
     justify-content: left; 
     align-items: center;
+    width:100vw;
 }
 
     #secondThird{
