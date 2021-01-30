@@ -187,5 +187,32 @@ module.exports = function(app) {
             res.json(workoutDB);
           });
       });
+
+  // BMI api route
+  app.get("/api/BMI/", function(req, res) {
+    db.BMI.findAll({
+      where: {
+        email: req.user.email
+      }
+    })
+      .then(function(BMIDB) {
+        console.log(BMIDB)
+        res.json(BMIDB);
+      });
+    });
+  
+  app.post("/api/BMI", function(req, res) {
+    
+    db.BMI.create({
+      height: req.body.height,
+      weight:req.body.weight,
+      BMI: req.body.BMI,
+      email: req.user.email
+    })
+      .then(function(goalDB) {
+        res.json(goalDB);
+      });
+  });
+
 };
     

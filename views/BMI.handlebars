@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <div class="black">
     <div class="container row">
         <div>
@@ -9,19 +8,19 @@
                         <div>
 
                             <div class="input-field col s4">
-                                <input id="weight" type="tel" class="validate">
+                                <input id="weight" type="number" class="validate">
                                 <label for="weight">Weight (Pounds):</label>
                             </div>
 
                             <div class="row">
         
                                 <div class="input-field col s4">
-                                    <input id="feet" type="text" class="validate">
+                                    <input id="feet" type="number" class="validate">
                                     <label for="feet">Height (Feet):</label>
                                 </div>
 
                                 <div class="input-field col s4">
-                                    <input id="inches" type="tel" class="validate">
+                                    <input id="inches" type="number" class="validate">
                                     <label for="inches">Height (Inches):</label>
                                 </div>
 
@@ -39,20 +38,6 @@
                     <div class="card yellow darken-1">
                     <div class="card-content black-text">
                         <span class="calculatedBMI">22.3</span>
-=======
-<body>
-<footer class="page-footer black">
-  <div class="container ">
-    <div class="row" id="bmiTop">
-          <div class="col l6 s12">
-              <h5 class="yellow-text">Calculate your BMI</h5>
-              <div class="row">
-                <form class="col s12">
-                  <div class="row">
-                    <div class="input-field col s4">
-                      <input id="icon_prefix" type="text" class="validate">
-                      <label for="icon_prefix">Height:</label>
->>>>>>> 2db840439ba81f4651061d04c88c5de659b71561
                     </div>
                     </div>
                 </div>
@@ -65,25 +50,25 @@
 
 <script >
     $(document).ready(function() {
-
+      var BMIForm = $("form");
         // get request for goals on load
-        $.get("/api/BMI"),function(data){
-        return data
-        }
+        //$.get("/api/BMI"),function(data){
+        //return data
+        //}
         // Getting references to our form and inputs
-        var BMIForm = $("form");
-        var feetInput = $("input#feet");
-        var inchesInput = $("input#inches");
-        var weightInput = $("input#weight");
+
+        // When the form is submitted, we validate there's an email and password entered
+        BMIForm.on("submit", function(event) {
+        event.preventDefault();
+
+        var feetInput = parseInt(("input#feet"));
+        var inchesInput = parseInt(("input#inches"));
+        var weightInput = parseInt(("input#weight"));
 
         var heightM = ((((feetInput*12)+inchesInput)*2.54)/100);
         var weightKG = (weightInput/2.20462);
         var BMI= weightKG/(heightM*heightM);
 
-
-        // When the form is submitted, we validate there's an email and password entered
-        BMIForm.on("submit", function(event) {
-        event.preventDefault();
         var userData = {
             height: feetInput*12+inchesInput,
             weight: weightInput,
