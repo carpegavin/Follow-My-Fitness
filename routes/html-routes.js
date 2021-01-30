@@ -26,9 +26,17 @@ module.exports = function(app) {
     res.render("BMI");
   });
 
-  app.get("/goals", isAuthenticated, function(req, res) {
-    res.render("goalsTrack");
+  app.get("/goals", isAuthenticated, function (req, res) {
+    Goals.all(function (data) {
+      var hbsObject = {
+       
+        Goals: data,
+      };
+  
+      res.render("goalsTrack", hbsObject);
+    });
   });
+
 
   app.get("/workout", isAuthenticated, function(req, res) {
     res.render("workout");
