@@ -55,7 +55,8 @@ module.exports = function(app) {
     app.post("/api/goals", function(req, res) {
       console.log(req.body);
       db.Goals.create({
-        goalSetByUser: req.body.goalSetByUser
+        goalSetByUser: req.body.goal,
+        email: req.user.email
       })
         .then(function(goalDB) {
           res.json(goalDB);
