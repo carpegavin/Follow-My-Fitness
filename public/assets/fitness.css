@@ -38,9 +38,10 @@ body{
     }
 
     #thirdThird{
-        background-color: black;
+    
         background-image: url("/assets/images/curlingGuy.jpg");
         background-size: cover;
+
     
     }
     .card{
@@ -48,6 +49,8 @@ body{
     width: 350px;
     display:block;
     text-align: center;
+    float: left;
+    margin-left: 20px;
 
     }
 
@@ -76,3 +79,10 @@ body{
     form{
         background-color: transparent;
     }
+/* 
+    .page-footer{
+        background-color: black;
+        background-image: url("/assets/images/fitnessGirl.jpg");
+        background-size: cover;
+        height: 650px;
+    } */
