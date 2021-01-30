@@ -6,9 +6,9 @@
     max-width: 100%;
 } */
 
- /* .container{
+  /* .container{
     border: 2px solid green;
-}   */
+}    */
 
 /* .row{
     display: block;
@@ -51,6 +51,12 @@ body{
 
     }
 
-    img{
-        width: 70px;
+    #loginRow{
+        display: inline-block;
+        width: 600px;
+        font-size: larger;
+    }
+
+    label{
+        font-size: large;
     }
