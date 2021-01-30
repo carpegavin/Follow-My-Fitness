@@ -14,7 +14,7 @@ var passport = require("./config/passport");
 // =============================================================
 var app = express();
 var PORT = process.env.PORT || 8080;
-
+app.use(express.static("public"));
 // Set Handlebars as the default templating engine.
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
@@ -46,13 +46,3 @@ db.sequelize.sync({ force: true }).then(function() {
   });
 });
 
-// BMI CALCULATOR
-// // weight is in pounds
-// // height will need to be converted to inches
-
-function calculator(weight, height) {
-  var results = weight / height / height * 703; 
-  console.log(results);
-}
-
-calculator(300,72);

@@ -1,19 +1,62 @@
-img{
-    max-width:100%;
-  /* display:block; */
-  height:auto;
-}
+ /* img{
+    border: 2px solid green;
+}  */
 
-body{
+/* body{
     max-width: 100%;
-}
+} */
 
-.container{
-    width:fit-content;
-    margin: none;
-}
+  /* .container{
+    border: 2px solid green;
+}    */
 
-.row{
+/* .row{
     display: block;
     max-width: 100%;
-} 
+    background-color: black;
+}  */
+
+
+body{
+    background-color:black;
+}
+#firstThird{
+    background-color: black;
+    background-image: url("/assets/images/fitnessGirl.jpg");
+    background-size: cover;
+    height: 650px;
+
+    color: white;
+    display: flex; 
+    justify-content: left; 
+    align-items: center;
+}
+
+    #secondThird{
+        background-color: #333;
+        height: 310px;
+    }
+
+    #thirdThird{
+        background-color: black;
+        background-image: url("/assets/images/curlingGuy.jpg");
+        background-size: cover;
+        height: 650px; 
+    }
+    .card{
+    border: 6px solid yellow;
+    width: 350px;
+    display:block;
+    text-align: center;
+
+    }
+
+    #loginRow{
+        display: inline-block;
+        width: 600px;
+        font-size: larger;
+    }
+
+    label{
+        font-size: large;
+    }
