@@ -32,19 +32,25 @@ body{
     align-items: center;
 }
 
-#secondThird{
-    background-color: #333;
-    height: 310px;
-}
+    #secondThird{
+        background-color: #333;
+        height: 310px;
+    }
 
-#thirdThird{
-    background-color: black;
-    background-image: url("/assets/images/curlingGuy.jpg");
-    background-size: cover;
-    height: 650px; 
-}
-.card{
-border: 6px solid green;
-width: 350px;
-display:block;
-}
+    #thirdThird{
+        background-color: black;
+        background-image: url("/assets/images/curlingGuy.jpg");
+        background-size: cover;
+        height: 650px; 
+    }
+    .card{
+    border: 6px solid yellow;
+    width: 350px;
+    display:block;
+    text-align: center;
+
+    }
+
+    img{
+        width: 70px;
+    }
