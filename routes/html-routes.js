@@ -4,6 +4,7 @@ var db = require("../models");
 
 
 var isAuthenticated = require("../config/middleware/isAuthenticated");
+const bmi = require("../models/bmi");
 
 module.exports = function(app) {
 
@@ -26,7 +27,22 @@ module.exports = function(app) {
   });
 
   app.get("/BMI", isAuthenticated, function(req, res) {
-    res.render("BMI");
+    db.Bmi.findAll({
+      where: {
+        email: req.user.email
+      }
+    }).then(hbsObject => {
+      console.log("This is HBS");
+      console.log(hbsObject);
+      let bmiArr = hbsObject.map(bmi => {
+        return bmi.dataValues
+      })
+      console.log(bmiArr)
+      const bmiObj = {
+        bmis: bmiArr
+      }
+      res.render("BMI",bmiObj)
+    })
   });
 
 
