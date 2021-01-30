@@ -10,15 +10,15 @@
     border: 2px solid green;
 }    */
 
-/* .row{
+.row{
     display: block;
     max-width: 100%;
-    background-color: black;
-}  */
+    background-color: transparent;
+} 
 
 
 body{
-    background-color:black;
+    background-color:white;
 }
 #firstThird{
     background-color: black;
@@ -59,11 +59,14 @@ body{
 
     label{
         font-size: large;
+        color: white;
     }
 
-    #bmiTop{
-        background-color: black;
-        background-image: url("/assets/images/fitnessGirl.jpg");
-        background-size: cover;
-        height: 650px;
+    #footer{
+        display: flex;
+        background: black;
+    } 
+
+    form{
+        background-color: transparent;
     }
