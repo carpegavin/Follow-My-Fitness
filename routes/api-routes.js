@@ -1,5 +1,6 @@
 var db = require("../models");
 var passport = require("../config/passport");
+const isAuthenticated = require("../config/middleware/isAuthenticated");
 
 
 
@@ -41,6 +42,8 @@ module.exports = function(app) {
         });
       }
     });
+
+
 
     // Goal api route
     app.get("/api/goals/", function(req, res) {
