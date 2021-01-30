@@ -10,11 +10,11 @@
     border: 2px solid green;
 }    */
 
-/* .row{
+.row{
     display: block;
     max-width: 100%;
-    background-color: black;
-}  */
+    background-color: transparent;
+} 
 
 
 body{
@@ -59,18 +59,20 @@ body{
 
     label{
         font-size: large;
-    }
-
-    #navlogo{
-        width:50px;
+        color: white;
     }
     
-    #footlogo{
-        display: inline-block;
-        width: 250px;
-        justify-content: center;
-    }
 
     input {
         background-color:white;
+        color: white;
+    }
+
+    #footer{
+        display: flex;
+        background: black;
+    } 
+
+    form{
+        background-color: transparent;
     }
