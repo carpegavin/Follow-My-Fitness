@@ -10,6 +10,8 @@
     border: 2px solid green;
 }    */
 
+@import url('https://fonts.googleapis.com/css2?family=Londrina+Solid&display=swap');
+
 .row{
     display: block;
     max-width: 100%;
@@ -28,6 +30,7 @@ body{
 
     color: white;
     display: flex; 
+    font-family: 'Londrina Solid', cursive;
     justify-content: left; 
     align-items: center;
 }
@@ -44,6 +47,11 @@ body{
 
     
     }
+
+    .brand-logo{
+        font-family: 'Londrina Solid', cursive;
+    }
+
     .card{
     border: 6px solid yellow;
     width: 350px;
