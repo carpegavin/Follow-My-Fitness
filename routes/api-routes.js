@@ -44,7 +44,11 @@ module.exports = function(app) {
 
     // Goal api route
     app.get("/api/goals/", function(req, res) {
-    db.Goals.findAll({})
+    db.Goals.findAll({
+      where: {
+        email: req.user.email
+      }
+    })
       .then(function(goalDB) {
         console.log(goalDB)
         res.json(goalDB);
