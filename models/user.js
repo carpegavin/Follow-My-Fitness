@@ -25,12 +25,12 @@ module.exports = function(sequelize, DataTypes) {
     //     type: DataTypes.INTEGER,
     //     allowNull: false
     // },
-    height: {
-        type: DataTypes.INTEGER,
+    firstName: {
+        type: DataTypes.STRING,
         allowNull: false
     },
-    weight: {
-      type: DataTypes.INTEGER,
+    lastName: {
+      type: DataTypes.STRING,
       allowNull: false
   },
     createdAt: {

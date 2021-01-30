@@ -27,19 +27,19 @@
       </div>
     </div>
 
-        <!-- weight -->
+        <!-- lastName -->
         <div class="row">
           <div class="input-field col s3">
-            <input id="weight" type="weight" class="validate">
-            <label for="weight">Weight</label>
+            <input id="firstName" type="firstName" class="validate">
+            <label for="firstName">First Name</label>
           </div>
         </div>
     
-        <!-- height -->
+        <!-- firstName -->
         <div class="row">
           <div class="input-field col s3">
-            <input id="height" type="height" class="validate">
-            <label for="height">Height</label>
+            <input id="lastName" type="lastName" class="validate">
+            <label for="lastName">Last Name</label>
           </div>
         </div>
 
@@ -57,8 +57,8 @@
   var signUpForm = $("form");
   var emailInput = $("input#email");
   var passwordInput = $("input#password");
-  var weightInput = $("input#weight");
-  var heightInput = $("input#height");
+  var firstNameInput = $("input#firstName");
+  var lastNameInput = $("input#lastName");
 
   // When the signup button is clicked, we validate the email and password are not blank
   signUpForm.on("submit", function(event) {
@@ -66,31 +66,31 @@
     var userData = {
       email: emailInput.val().trim(),
       password: passwordInput.val().trim(),
-      height: heightInput.val().trim(),
-      weight: weightInput.val().trim(),
+      firstName: lastNameInput.val().trim(),
+      lastName: firstNameInput.val().trim(),
     };
 
     console.log(userData)
 
-    if (!userData.email || !userData.password || !userData.height || !userData.weight) {
+    if (!userData.email || !userData.password || !userData.firstName || !userData.lastName) {
       alert("You must fill out each form field")
     }
     // If we have an email and password, run the signUpUser function
-    signUpUser(userData.email, userData.password, userData.height, userData.weight);
+    signUpUser(userData.email, userData.password, userData.firstName, userData.lastName);
     emailInput.val("");
     passwordInput.val("");
-    weightInput.val("");
-    heightInput.val("")
+    firstNameInput.val("");
+    lastNameInput.val("")
   });
 
   // Does a post to the signup route. If successful, we are redirected to the members page
   // Otherwise we log any errors
-  function signUpUser(email, password, height, weight) {
+  function signUpUser(email, password, firstName, lastName) {
     $.post("/api/signup", {
       email: email,
       password: password,
-      height: height,
-      weight: weight
+      firstName: firstName,
+      lastName: lastName
     })
       .then(function(data) {
         window.location.replace("/login");
