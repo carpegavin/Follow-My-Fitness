@@ -67,3 +67,10 @@ body{
         background-size: cover;
         height: 650px;
     }
+
+    #signUp{
+        background-color: black;
+        background-image: url("/assets/images/fitnessGirl.jpg");
+        background-size: cover;
+        height: 650px;
+    }
