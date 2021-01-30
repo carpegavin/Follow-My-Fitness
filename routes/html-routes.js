@@ -1,4 +1,7 @@
 var path = require("path");
+var db = require("../models");
+
+
 
 var isAuthenticated = require("../config/middleware/isAuthenticated");
 
@@ -27,15 +30,23 @@ module.exports = function(app) {
   });
 
   app.get("/goals", isAuthenticated, function (req, res) {
-    Goals.all(function (data) {
-      var hbsObject = {
-       
-        Goals: data,
-      };
+    let userID = ""
+    if (req.user) {
+      userID = req.user.id
+    }
+    console.log("THIS IS USERID " + userID)
+    db.User.findAll({where: {id:userID}}).then(user => {
+     console.log(user[0].dataValues.email)
+     
+      db.Goal.findAll({where: {email: user[0].dataValues.email}}).then(hbsObject => {
+        console.log("hbsObject")
+        res.render("goalsTrack", hbsObject);
   
-      res.render("goalsTrack", hbsObject);
-    });
-  });
+      })
+
+    })
+    
+});
 
 
   app.get("/workout", isAuthenticated, function(req, res) {
@@ -45,6 +56,21 @@ module.exports = function(app) {
   app.get("/profile", isAuthenticated, function(req, res) {
     res.render("profile");
   });
+
+  app.get("/workoutBodyweight", isAuthenticated, function(req, res) {
+    res.render("workoutBodyweight");
+  });
+
+  app.get("/workoutCardio", isAuthenticated, function(req, res) {
+    res.render("workoutCardio");
+  });
+
+
+  app.get("/workoutWeightlifting", isAuthenticated, function(req, res) {
+    res.render("workoutWeightlifting");
+  });
+
+
 
 };
 

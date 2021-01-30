@@ -42,10 +42,19 @@ module.exports = function(app) {
         });
       }
     });
+<<<<<<< HEAD
 /////Goals
     // Goal api route
     app.get("/api/goals/", function(req, res) {
     db.Goals.findAll({
+=======
+
+
+
+    // Goal api route
+    app.get("/api/goals/", function(req, res) {
+    db.Goal.findAll({
+>>>>>>> e6b080fe5493e1837b428437769420d9d3d815e5
       where: {
         email: req.user.email
       }
@@ -59,7 +68,9 @@ module.exports = function(app) {
 
     app.post("/api/goals", function(req, res) {
       console.log(req.body);
-      db.Goals.create({
+      console.log(req.user.email);
+      
+      db.Goal.create({
         goalSetByUser: req.body.goal,
         email: req.user.email
       })
@@ -74,7 +85,7 @@ module.exports = function(app) {
     
       console.log("condition", condition);
     
-      Goals.update(
+      Goal.update(
         {
           completed: req.body.completed,
         },
