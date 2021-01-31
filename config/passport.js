@@ -1,3 +1,7 @@
+// middleware for handling authentication
+// there's all kinds of authentication strategies, we're using the local stategy
+// where we're storing users locally with email/password.
+
 var passport = require("passport");
 var LocalStrategy = require("passport-local").Strategy;
 
