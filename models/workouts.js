@@ -3,7 +3,6 @@ module.exports = function(sequelize, DataTypes) {
         email: {
             type: DataTypes.STRING,
             allowNull: false,
-            unique: true,
             validate: {
               isEmail: true
             }
@@ -13,23 +12,19 @@ module.exports = function(sequelize, DataTypes) {
               allowNull: false
           },
         sets: {
-              type: DataTypes.INTEGER,
+              type: DataTypes.STRING,
               allowNull:true
           },
         reps: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.STRING,
             allowNull:true
         },
         distance: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.STRING,
             allowNull:true
         },
-        date: {
-            type: DataTypes.DATEONLY ,
-            allowNull: false
-        },
         weight_lifted: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.STRING,
             allowNull: true
         },
         exercise_name: {
@@ -37,14 +32,14 @@ module.exports = function(sequelize, DataTypes) {
             allowNull:false
         },
         time_workout: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.STRING,
             allowNull:true
         },
-        // createdAt: {
-        //     type: DataTypes.DATE,
-        //     allowNull: false,
-        //     defaultValue: DataTypes.NOW
-        //   }
+        createdAt: {
+            type: DataTypes.DATE,
+            allowNull: false,
+            defaultValue: DataTypes.NOW
+          }
     });
     return Workout;
   };

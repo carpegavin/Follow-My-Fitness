@@ -30,12 +30,11 @@ module.exports = function (app) {
         email: req.user.email,
       },
     }).then((hbsObject) => {
-      console.log("This is HBS");
-      console.log(hbsObject);
+      
       let bmiArr = hbsObject.map((bmi) => {
         return bmi.dataValues;
       });
-      console.log(bmiArr);
+      
       const bmiObj = {
         bmis: bmiArr,
       };
@@ -62,7 +61,21 @@ module.exports = function (app) {
 
 
   app.get("/workout", isAuthenticated, function (req, res) {
-    res.render("workout");
+    db.Workout.findAll({
+      where: {
+        email: req.user.email,
+      },
+    }).then((hbsObject) => {
+      
+      let workoutArr = hbsObject.map((workout) => {
+        return workout.dataValues;
+      });
+      
+      const workoutObj = {
+        workouts: workoutArr,
+      };
+      res.render("workout", workoutObj);
+    });
   });
 
   app.get("/profile", isAuthenticated, function (req, res) {
@@ -70,14 +83,59 @@ module.exports = function (app) {
   });
 
   app.get("/workoutBodyweight", isAuthenticated, function (req, res) {
-    res.render("workoutBodyweight");
+    db.Workout.findAll({
+      where: {
+        email: req.user.email,
+        workout_type: "Bodyweight"
+      },
+    }).then((hbsObject) => {
+      
+      let workoutArr = hbsObject.map((workout) => {
+        return workout.dataValues;
+      });
+      
+      const workoutObj = {
+        workouts: workoutArr,
+      };
+      res.render("workoutBodyweight", workoutObj);
+    });;
   });
 
   app.get("/workoutCardio", isAuthenticated, function (req, res) {
-    res.render("workoutCardio");
+    db.Workout.findAll({
+      where: {
+        email: req.user.email,
+        workout_type: "Cardio"
+      },
+    }).then((hbsObject) => {
+      
+      let workoutArr = hbsObject.map((workout) => {
+        return workout.dataValues;
+      });
+      
+      const workoutObj = {
+        workouts: workoutArr,
+      };
+      res.render("workoutCardio", workoutObj);
+    });;
   });
 
   app.get("/workoutWeightlifting", isAuthenticated, function (req, res) {
-    res.render("workoutWeightlifting");
+    db.Workout.findAll({
+      where: {
+        email: req.user.email,
+        workout_type: "Weightlifting"
+      },
+    }).then((hbsObject) => {
+      
+      let workoutArr = hbsObject.map((workout) => {
+        return workout.dataValues;
+      });
+      
+      const workoutObj = {
+        workouts: workoutArr,
+      };
+      res.render("workoutWeightlifting", workoutObj);
+    });;
   });
 };
