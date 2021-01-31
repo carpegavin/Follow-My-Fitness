@@ -12,6 +12,7 @@
     "express-sessions": "^1.0.6",
     "handlebars": "^4.7.6",
     "materialize-css": "^1.0.0-rc.2",
+    "moment": "^2.29.1",
     "mysql": "^2.18.1",
     "mysql2": "^2.2.5",
     "nodemon": "^2.0.7",
