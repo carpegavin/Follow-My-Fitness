@@ -1,31 +1,62 @@
         
         <div class= "row" id="firstThird" >
-            <div class="col s5 pull-s6">
-                <h1>Track your progress</h1>
-                <p>Log in daily, track your workouts, and see your progress in our App.  From walking, to stretching, to weightlifting, we can help you put in the work</p>
+            <div class="col s12 left m11">
+              <div class="card">
+                <div>
+                    <span class="card-title text-black">Calculate your BMI!</span>
+                </div>
+                <div class="card-image">
+                  {{!-- need to route this to proper handlebars page --}}
+                  <a href="/BMI" class="chooseWorkout" title="weightLifting"><img src="../assets/images/bmiCalculator.jpg" /></a>
+                </div>
+              </div>
             </div>
         </div>
 
         <div class="row" id="secondThird" >
-            <div class="col s5 push-s6">
+            <div class="col s5 right">
+              <div class="card">
+                <div>
+                    <span class="card-title black-text">Set and Check Goals</span>
+                </div>
+                <div class="card-image">
+                  {{!-- need to route this to proper handlebars page --}}
+                  <a href="/goals" class="goals" title="goals"><img src="../assets/images/ketllebellGuy.jpg" /></a>
+                </div>
+              </div>
+            </div>
+            <div class="col s5 push-s2 text-white">
                 <h1>MANAGE GOALS</h1>
                 <p>Set your goals in our app, then login daily so that we know you're hitting your goals.</p>
                 <button onclick="location.href='/goals">GET STARTED</button>
             </div>
         </div>
 
-            <div class="row center-align" id="thirdThird">
-                <div class="col s12 m4 l4">
-                        <div class="col s12 m4 l4">
-                          <div class="card">
-                            <div>
-                                <span class="card-title">Input your Workout!</span>
-                            </div>
-                            <div class="card-image">
-                              {{!-- need to route this to proper handlebars page --}}
-                              <a href="/workout" class="chooseWorkout" title="weightLifting"><img src="../assets/images/gymTime.jpg" /></a>
-                            </div>
-                          </div>
-                        </div>
-                  </div>
+
+
+
+        <div class="row" id="thirdThird" >
+
+            <div class="col s5 left">
+              <div class="card">
+                <div>
+                    <span class="card-title black-text">Input Your Workout</span>
+                </div>
+                <div class="card-image">
+                  {{!-- need to route this to proper handlebars page --}}
+                  <a href="/workout" class="goals" title="goals"><img src="../assets/images/gymTime.jpg" /></a>
+                </div>
+              </div>
             </div>
+
+              <div class="col s5 right">
+                <h1>Input Your Workout! </h1>
+                <p>Choose between cardio, weightlifting or bodyweight excersizes.</p>
+                <button onclick="location.href='/workout">GET STARTED</button>
+            </div>
+          
+
+        </div>
+
+
+      
