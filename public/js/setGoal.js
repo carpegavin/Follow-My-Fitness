@@ -1,4 +1,4 @@
-$(function() {
+// $(function() {
     $(".change-complete").on("click", function(event) {
       var id = $(this).data("id");
       var newComplete = $(this).data("newcomplete");
@@ -20,26 +20,28 @@ $(function() {
       );
     });
   
-    $(".create-goal").on("submit", function(event) {
-      // Make sure to preventDefault on a submit event.
-      event.preventDefault();
+//     $(".create-goal").on("submit", function(event) {
+//       // Make sure to preventDefault on a submit event.
+//       event.preventDefault();
   
-      var newGoal = {
-        goalSetByUser: $("#userGoal").val().trim()
-      };
+//       var newGoal = {
+//         goalSetByUser: $("#userGoal").val().trim()
+//       };
   
-      // Send the POST request.
-      $.ajax("/api/goals", {
-        type: "POST",
-        data: newGoal
-      }).then(
-        function() {
-          console.log("created new goal");
-          // Reload the page to get the updated list
-          location.reload();
-        }
-      );
-    });
+//       // Send the POST request.
+//       $.ajax("/api/goals", {
+//         type: "POST",
+//         data: newGoal
+//       }).then(
+//         function() {
+//           console.log("created new goal");
+//           // Reload the page to get the updated list
+//           location.reload();
+//         }
+//       );
+//     });
   
 
-})
+// })
+
+
