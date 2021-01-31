@@ -54,8 +54,31 @@
               </div>
         </div>
 
-        <div id ="secondThird">
-            <h1>Your Previous Workouts at a Glance</h1>
-        </div>
+        <div>
+
     </div>
+
+    <div class="container">
+          <div class="row">
+            <div class="col">
+
+              <h2>Your Recent Workouts</h2>
+              <table>
+                <tr>
+                  <th>Date</th>
+                  <th>Workout Type</th>
+                  <th>Exercise Name</th>
+                </tr>
+                {{#each workouts}}
+                <tr>
+                  <td>{{createdAt}}</td>
+                  <td>{{workout_type}} </td>
+                  <td>{{exercise_name}} </td>
+                </tr>
+                {{/each}}
+              </table>
+            </div>
+
+          </div>
+        </div>
         
