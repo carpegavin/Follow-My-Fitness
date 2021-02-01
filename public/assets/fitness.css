@@ -6,11 +6,12 @@
     max-width: 100%;
 } */
 
-  /* .container{
-    border: 2px solid green;
-}    */
-
 @import url('https://fonts.googleapis.com/css2?family=Londrina+Solid&display=swap');
+
+button{
+    background-color: yellow;
+    color: black;
+}
 
 .row{
     display: block;
@@ -26,13 +27,13 @@ body{
     background-color: black;
     background-image: url("/assets/images/fitnessGirl.jpg");
     background-size: cover;
-    height: 430px;
+    height: 520px;
     color: black;
     display: flex; 
     font-family: 'Londrina Solid', cursive;
     justify-content: left; 
     align-items: center;
-    width:100vw;
+ 
 }
 
 #secondThird{
@@ -50,6 +51,7 @@ body{
     display: inline-flex;
     color: white;
     font-family: 'Londrina Solid', cursive;
+    height: 450px;
 }
 
 .brand-logo{
@@ -74,7 +76,7 @@ margin-left: 20px;
 
 label{
     font-size: large;
-    color: white;
+    color: black !important;
 }
 
 #footer{
@@ -85,6 +87,7 @@ label{
 form{
     background-color: transparent;
     display: block;
+    padding: 20px;
 }
 
  h1 {
