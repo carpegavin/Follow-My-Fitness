@@ -49,9 +49,49 @@ body{
     background-size: 100%;
     width: auto;
     display: flex;
-    color: white;
+    color: yellow;
     font-family: 'Londrina Solid', cursive;
     height: 450px;
+}
+
+#runningGuy{
+    background-image: url(/assets/images/runningGuy.jpg);
+    background-size: 100%;
+    width: auto;
+    display: flex;
+    color:yellow;
+    font-family: 'Londrina Solid', cursive;
+    height: 450px;
+ 
+}
+
+#crunchGirl{
+    background-image: url(/assets/images/crunchGirl.jpg);
+    background-size: 100%;
+    width: auto;
+    display: flex;
+    color:yellow;
+    font-family: 'Londrina Solid', cursive;
+    height: 450px;
+}
+
+#squatGirl{
+    background-image: url(/assets/images/squatGirl.jpg);
+    background-size: 100%;
+    width: auto;
+    display: flex;
+    color:yellow;
+    font-family: 'Londrina Solid', cursive;
+    height: 450px;
+}
+
+#works{
+    color:yellow;
+    font-size: 20px;
+}
+
+#workRecent{
+    color:yellow;
 }
 
 .brand-logo{
@@ -102,3 +142,5 @@ form{
  #goalsNot {
      margin-right: 12rem;
  }
+
+ 
