@@ -47,8 +47,8 @@ body{
 #thirdThird {
     background-image: url(/assets/images/curlingGuy.jpg);
     background-size: 100%;
-    width: 100%;
-    display: inline-flex;
+    width: auto;
+    display: flex;
     color: white;
     font-family: 'Londrina Solid', cursive;
     height: 450px;
