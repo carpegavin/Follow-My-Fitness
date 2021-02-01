@@ -19,7 +19,7 @@ module.exports = function (app) {
 
   app.get("/login", function (req, res) {
     if (req.user) {
-      res.render("index");
+      res.redirect('/');
     }
     res.render("login");
   });
