@@ -91,3 +91,11 @@ form{
      margin-left: 20px;
      margin-right: 20px;
  }
+
+ #setGoal {
+     padding:3rem;
+ }
+
+ #goalsNot {
+     margin-right: 12rem;
+ }
