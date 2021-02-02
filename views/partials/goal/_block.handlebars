@@ -1,5 +1,5 @@
 <li>
-	{{date}}      {{goalSetByUser}} 
+	{{date}} {{goalSetByUser}} 
 	{{#unless completed}}
 	<form action="/api/goals/{{id}}" method="post">
         <input type="hidden" name="completed" value="1">
