@@ -39,7 +39,7 @@
 
 <br>
 
-![screengrab]()
+![screengrab](https://github.com/carpegavin/Follow-My-Fitness/blob/main/public/assets/gif/demo.gif?raw=true)
 
 
 ### `Questions?`
