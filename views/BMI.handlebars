@@ -41,12 +41,14 @@
             <th>BMI</th>
             <th>Height</th>
             <th>Weight</th>
+            <th>Delete</th>
           </tr>
           {{#each bmis}}
           <tr>
             <td>{{bmi}}</td>
             <td>{{height}} inches</td>
             <td>{{weight}} lbs</td>
+            <td id="deleteBMI" data-id={{id}}>❌</td>
           </tr>
           {{/each}}
         </table>
@@ -65,6 +67,19 @@
       var feetInput = $("input#feet");
       var inchesInput = $("input#inches");
       var weightInput = $("input#weight");
+      var deleteButton = $("td#deleteBMI");
+
+      deleteButton.on("click", function(event){
+        console.log($(this).data("id"))
+        var id = $(this).data("id");
+
+        $.ajax({
+              method: "DELETE",
+              url: "/api/BMI/" + id
+            })
+              .then(location.reload());
+          }
+        );
       
         // get request for goals on load
         $.get("/api/BMI"),function(data){
@@ -72,6 +87,8 @@
         }
         // Getting references to our form and inputs
         // When the form is submitted, we validate there's an email and password entered
+
+
         BMIForm.on("submit", function(event) {
         event.preventDefault();
         let feet = parseInt(feetInput.val().trim());
@@ -110,5 +127,5 @@
             });
         }
       });
-    });
+      })
 </script>
