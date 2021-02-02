@@ -156,6 +156,15 @@ margin-top:1.5rem;
     color:black;
 }
 
+#calcBMI {
+    margin-left: 10rem;
+    color:black;
+}
+
+#input {
+    margin-left: 6rem;
+}
+
 #loginRow{
     display: inline-block;
     width: 600px;
