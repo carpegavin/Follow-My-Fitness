@@ -200,4 +200,8 @@ form{
      margin-right: 12rem;
  }
 
+ #deleteBMI {
+     cursor: pointer;
+ }
+
  
