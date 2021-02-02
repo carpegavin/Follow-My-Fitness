@@ -21,7 +21,7 @@ button{
 
 
 body{
-    background-color:white;
+    background-color:black;
 }
 #firstThird{
     background-color: black;
@@ -85,6 +85,16 @@ body{
     height: 450px;
 }
 
+#gymTime{
+    background-image: url(/assets/images/gymTime.jpg);
+    background-size: 100%;
+    width: auto;
+    display: flex;
+    color:yellow;
+    font-family: 'Londrina Solid', cursive;
+    height: 450px;
+}
+
 #works{
     color:yellow;
     font-size: 20px;
@@ -92,6 +102,11 @@ body{
 
 #workRecent{
     color:yellow;
+}
+
+#manageGoals{
+    margin-right:50rem;
+    margin-left:-1rem;
 }
 
 .brand-logo{
@@ -106,6 +121,17 @@ text-align: center;
 float: left;
 margin-left: 20px;
 
+}
+
+#inputWork{
+    margin-right: 25rem;
+    margin-top: 1rem;
+    color: black;
+}
+
+#inputBMI {
+    margin-right:-2rem;
+    color:black;
 }
 
 #loginRow{
