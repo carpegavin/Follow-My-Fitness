@@ -43,7 +43,7 @@
 
 
 ### `Questions?`
-Please don't hesitate to contact us, The Full Stache Web Devs.
+Please don't hesitate to contact us.
 
 #### [Gavin Phill](https://github.com/carpegavin)
 #### [Devante Williams](https://github.com/Devante05)
@@ -51,6 +51,6 @@ Please don't hesitate to contact us, The Full Stache Web Devs.
 #### [Logan Sage](https://github.com/sagelogan)
 #### [Jared Ackley](https://github.com/jrod3323)
 
-© copyright 2021 Full Stache Developers
+© copyright 2021 Full Stache Web Developers
 
 
