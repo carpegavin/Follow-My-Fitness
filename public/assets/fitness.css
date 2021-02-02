@@ -161,6 +161,16 @@ margin-top:1.5rem;
     color:black;
 }
 
+#recentBMI {
+    /* margin-right: 30rem; */
+    margin-right: 20rem;
+    color: yellow;
+}
+
+#BMItable {
+    color:yellow;
+}
+
 #input {
     margin-left: 6rem;
 }
