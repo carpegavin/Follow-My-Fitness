@@ -2,7 +2,7 @@
 
 ## `Description`
 
-* User StoryFollow My Fitness is an application designed to give a user the ability to track their workouts, set goals, and track current body stats.  The application will allow the user to track their current BMI statistics as well as daily work outs.  Workouts will bestored in a database so that they persist for a user. 
+* Follow My Fitness is an application designed to give a user the ability to input and store their exercise goals and to input and track various workouts, to include: cardio/weightlifting/bodyweight movements. A user can also calcualte and store their BMI.  
 
 
 ## `Technologies used`
@@ -43,7 +43,7 @@
 
 
 ### `Questions?`
-Please don't hesitate to contact the development team:
+Please don't hesitate to contact us, The Full Stache Web Devs.
 
 #### [Gavin Phill](https://github.com/carpegavin)
 #### [Devante Williams](https://github.com/Devante05)
