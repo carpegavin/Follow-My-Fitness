@@ -20,8 +20,7 @@ module.exports = function (app) {
   app.get("/login", function (req, res) {
     if (req.user) {
       res.redirect('/');
-    }
-    res.render("login");
+    }else{res.render("login")};
   });
 
   app.get("/BMI", isAuthenticated, function (req, res) {
