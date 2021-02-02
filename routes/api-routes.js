@@ -167,4 +167,14 @@ module.exports = function (app) {
       res.json(BMIDB);
     });
   });
+
+  app.delete("/api/BMI/:id", function (req,res){
+    db.Bmi.destroy({
+      where:{
+        id: req.params.id
+      }
+    }).then(function(dbBMI){
+      res.json(dbBMI);
+    })
+  })
 };
