@@ -11,7 +11,11 @@
 button{
     background-color: yellow;
     color: black;
+    border-radius: 15px;
+
 }
+
+
 
 .row{
     display: block;
