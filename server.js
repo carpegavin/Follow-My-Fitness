@@ -9,10 +9,12 @@ var express = require("express");
 var exphbs = require("express-handlebars");
 var session = require("express-session");
 var passport = require("./config/passport");
+var compression = require('compression');
 
 // Sets up the Express App
 // =============================================================
 var app = express();
+app.use(compression());
 var PORT = process.env.PORT || 8080;
 app.use(express.static("public"));
 // Set Handlebars as the default templating engine.
@@ -35,8 +37,8 @@ app.use(passport.session());
 
 // Routes
 // =============================================================
-require("./routes/api-routes.js")(app);
-require("./routes/html-routes.js")(app);
+require("./public/dist/api-routes")(app);
+require("./public/dist/html-routes")(app);
 
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
